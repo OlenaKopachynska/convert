@@ -1,0 +1,27 @@
+<input (input)="onAmmountFrom($event)" [(ngModel)]="ammountFrom" placeholder="amount from" type="text">
+
+<select (change)="onCurrencyFrom($event)" [(ngModel)]="currencyFrom" class="custom-select">
+  <option disabled value="">Currency from</option>
+  <option>USD</option>
+  <option>EUR</option>
+  <option>CZK</option>
+  <option>UAH</option>
+</select>
+<button (click)="onReverse()">Reverse</button>
+
+<select (change)="onCurrencyTo($event)" [(ngModel)]="currencyTo" class="custom-select">
+  <option disabled value="">Currency to</option>
+  <option>USD</option>
+  <option>EUR</option>
+  <option>CZK</option>
+  <option>UAH</option>
+</select>
+<input [(ngModel)]="ammountTo" type="text" value="{{ammountTo}}">
+
+<button (click)="onClickBtn()">Convert</button>
+
+<app-chart [currencyFrom]="currencyFrom" [currencyTo]="currencyTo"></app-chart>
+
+
+
+
